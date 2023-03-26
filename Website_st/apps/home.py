@@ -4,12 +4,17 @@ def app():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://th.bing.com/th?id=OIP.70VZJExiK-YLhdiz4Oc7iQHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2");
+             background-image: url("https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWVkaWNhbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
              background-attachment: fixed;
-             background-size: cover
+            #  height: 650px;
+            #  width: 1519px;
+             background-size: 99% ;
+             background-repeat:no-repeat;
          }}
          </style>
          """,
          unsafe_allow_html=True
      )
-        st.write('Home page of the site')
+    
+        
+        st.subheader('Whether you need professional medical help or just need to buy medicines we have got you covered.')

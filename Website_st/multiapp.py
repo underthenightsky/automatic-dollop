@@ -18,8 +18,8 @@ class MultiApp():
         #                             orientation='horizontal'
         #                     )
         app=st.selectbox(
-                '',
-                self.apps,
+                'j',
+                self.apps,label_visibility='hidden',
                 format_func=lambda app: app['title'])
         app['function']()
         pass
