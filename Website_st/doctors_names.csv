@@ -1,0 +1,6 @@
+Name,Specialty,Address,Phone,Image,XP,Symptoms
+John Smith,Cardiologist,123 Main St,(555) 555-1234,https://img.freepik.com/free-photo/smiling-doctor-with-strethoscope-isolated-grey_651396-974.jpg?size=626&ext=jpg,3,"Chest pain,Shortness of breath,Dizziness"
+Mary Johnson,Dermatologist,456 Oak Ave,(555) 555-5678,https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?size=626&ext=jpg,12,"Rash,Acne,Eczema"
+James Lee,Gastroenterologist,789 Elm St,(555) 555-9012,https://img.freepik.com/free-photo/smiling-touching-arms-crossed-room-hospital_1134-799.jpg?size=626&ext=jpg&ga=GA1.2.1479290420.1679825417&semt=sph,14,"Abdominal pain,Diarrhea,Constipation"
+Sarah Brown,Neurologist,234 Maple Ave,(555) 555-3456,https://img.freepik.com/premium-photo/medical-concept-asian-beautiful-female-doctor-white-coat-with-glasses-waist-high-medical-student-female-hospital-worker-looks-into-camera-smiles-studio-blue-background_185696-615.jpg?size=338&ext=jpg&ga=GA1.2.1479290420.1679825417&semt=sph,1,"Headache,Migraine,Seizure"
+David Kim,Psychiatrist,567 Pine St,(555) 555-7890,https://img.freepik.com/free-photo/portrait-hansome-young-male-doctor-man_171337-5068.jpg?size=626&ext=jpg&ga=GA1.2.1479290420.1679825417&semt=sph,19,"Depression,Anxiety,Stress"

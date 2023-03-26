@@ -1,5 +1,6 @@
 import streamlit as st
 def app():
+  
         st.markdown(
          f"""
          <style>
@@ -17,4 +18,6 @@ def app():
      )
     
         
-        st.subheader('Whether you need professional medical help or just need to buy medicines we have got you covered.')
+        st.write('Whether you need professional medical help or just need to buy medicines we have got you covered.')
+        st.markdown(' ## About Us  ##')
+        st.write('We started out as a small group of friends committed to providing high quality medical advice to everyone at affordable rates.')

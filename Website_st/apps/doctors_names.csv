@@ -1,0 +1,6 @@
+Name,Specialty,Address,Phone,Image,XP,Symptoms
+John Smith,Cardiologist,123 Main St,(555) 555-1234,https://media.istockphoto.com/id/1327024466/photo/portrait-of-male-doctor-in-white-coat-and-stethoscope-standing-in-clinic-hall.jpg?s=612x612&w=0&k=20&c=49wqOwwuonk9f8NACL7M_5RosqQPFwJ8-dpmeo9AvQw=,3,"Chest pain,Shortness of breath,Dizziness"
+Mary Johnson,Dermatologist,456 Oak Ave,(555) 555-5678,https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=400,12,"Rash,Acne,Eczema"
+James Lee,Gastroenterologist,789 Elm St,(555) 555-9012,https://www.istockphoto.com/photo/confident-successful-mature-doctor-at-hospital-gm1346124900-423979080,14,"Abdominal pain,Diarrhea,Constipation"
+Sarah Brown,Neurologist,234 Maple Ave,(555) 555-3456,https://img.freepik.com/free-photo/young-woman-doctor-with-stethoscope-hospital_1303-20691.jpg?size=626&ext=jpg&ga=GA1.2.1479290420.1679825417&semt=sph,1,"Headache,Migraine,Seizure"
+David Kim,Psychiatrist,567 Pine St,(555) 555-7890,https://img.freepik.com/free-photo/smiling-touching-arms-crossed-room-hospital_1134-799.jpg?size=626&ext=jpg&ga=GA1.2.1479290420.1679825417&semt=sph,19,"Depression,Anxiety,Stress"
