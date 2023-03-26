@@ -1,6 +1,5 @@
 import streamlit as st
 from apps import home,doctors,data,auth
-from streamlit_option_menu import option_menu
 class MultiApp():
     def __init__(self):
         self.apps_1=[]

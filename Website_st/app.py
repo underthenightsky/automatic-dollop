@@ -48,7 +48,7 @@ with colT2:
 
 app=MultiApp()
 app.add_app('Home',home.app)
-app.add_app('Sign Up/Log In', auth.Verification())
+app.add_app('Sign Up/Log In', auth.Verification)
 app.add_app('Data',data.app)
 app.add_app('Consult a Doctor',doctors.app)
 app.run()
