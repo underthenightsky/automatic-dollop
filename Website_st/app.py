@@ -3,6 +3,7 @@ from multiapp import MultiApp
 import pymongo
 from flask import redirect
 from apps import home,data,doctors,auth
+# from apps.auth.func import Verification,LoginUI
 
 # col1,col2,col3,col4,col5,col6,col7,col8=st.columns(8)
 # with col1:
@@ -48,7 +49,8 @@ with colT2:
 
 app=MultiApp()
 app.add_app('Home',home.app)
-app.add_app('Sign Up/Log In', auth.Verification)
+app.add_app('Sign Up', auth.Verification)
+app.add_app('Log In',auth.LoginUI)
 app.add_app('Data',data.app)
 app.add_app('Consult a Doctor',doctors.app)
 app.run()

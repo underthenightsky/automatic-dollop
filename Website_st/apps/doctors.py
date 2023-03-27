@@ -5,7 +5,7 @@ import os
 def app():
     # Set page title and favicon
     # st.set_page_config(page_title='Find a Doctor',page_icon=':hospital:')
-
+    os.chdir('C:/Users/1/Desktop/file 1/Website/doctor_app-master (1)/doctor_app-master/Website_st')
     # Load data
     doctors_df = pd.read_csv(f'{os.getcwd()}/doctors_names.csv')
     
