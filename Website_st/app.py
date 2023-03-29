@@ -46,13 +46,13 @@ with colT2:
             st.title('   New Medicos')
             st.markdown('### A common interface for patients and doctors ###' )    
 
-
-app=MultiApp()
-app.add_app('Home',home.app)
-app.add_app('Sign Up', auth.Verification)
-app.add_app('Log In',auth.LoginUI)
-app.add_app('Data',data.app)
-app.add_app('Consult a Doctor',doctors.app)
-app.run()
+def func():
+    app=MultiApp()
+    app.add_app('Home Page',home.app)
+    app.add_app('Sign Up', auth.Verification)
+    app.add_app('Log In',auth.LoginUI)
+    app.add_app('Data',data.app)
+    app.add_app('Consult a Doctor',doctors.app)
+    app.run()
 
     

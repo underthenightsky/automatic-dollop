@@ -1,11 +1,16 @@
 import streamlit as st
 import pymongo
 from flask import redirect
+export_username=''
 def Verification(): 
                 if "load_state" not in st.session_state:
                                                     
                                 st.session_state.load_state = False                                
-                    
+                if len(export_username)!=0:
+                      
+                      return  st.warning('You are already registered. ')
+                else :
+                        pass     
                   
                                                    
                 
@@ -19,7 +24,7 @@ def Verification():
                         if existing_user:
                             st.error("Username already exists.")
                             return "User Alr Exists"
-
+                        username_global=username
                         # Create a new user document
                         user = {"username": username, "password": password, "email": email, "name": name,"age": age,"gender": gender, "Weight": Weight, "Height": Height, "MedicalHistory": History}
 
@@ -63,10 +68,12 @@ def Verification():
                         Weight = st.text_input("Weight")
                         # Height
                         Height = st.text_input("Height")
-                        options = ["HyperTension", "Hypotension", "High Sugar", "Cancer"]
-                        medicalIssues = st.multiselect("Any Serious Medical Issues?", options)
+                        # options = ["HyperTension", "Hypotension", "High Sugar", "Cancer"]
+                        medicalIssues = st.Text_imput("Any Serious Medical Issues or Allergies?")
                 st.markdown("")
-
+                
+                export_username=username
+            
                     # Add validation for form fields
                 if st.button("Create Account"):
                         if len(name.strip()) == 0:
@@ -120,6 +127,8 @@ def Verification():
                                 password1 = st.text_input("Password ", type="password",key='7hy')
 
                             st.markdown("")
+                            # global export
+                            export_username=username
 
                             # Add validation for form fields
                             if st.button("Login"):
@@ -139,6 +148,11 @@ def LoginUI():
                     
                 if "load_state" not in st.session_state:
                         st.session_state.load_state = False
+                if len(export_username)!=0:
+                      
+                      return  st.warning('You are already registered. ')
+                else :
+                      pass       
                
                 def login(username, password):
                     client = pymongo.MongoClient("mongodb+srv://Garv:bcss1972@cluster0.wjgguh1.mongodb.net/?retryWrites=true&w=majority")
@@ -146,6 +160,8 @@ def LoginUI():
                     # Check if the user exists and the password matches
                     user = db.users.find_one({"username": username, "password": password})
                     if user:
+                        # global export
+                        export_username=username
                         st.success("Login successful")
                     else:
                         st.error("Invalid username or password")
@@ -233,15 +249,17 @@ def LoginUI():
                             st.markdown("")
                             # Age
                             age = st.text_input("Age")
-                            options = ["Male", "Female"]
+                            options = ["Male", "Female",'Other']
                             gender = st.selectbox("Select your gender", options)
                             # Weight
-                            Weight = st.text_input("Weight")
+                            Weight = st.text_input("Weight(in KG)")
                             # Height
-                            Height = st.text_input("Height")
-                            options = ["HyperTension", "Hypotension", "High Sugar", "Cancer"]
-                            medicalIssues = st.multiselect("Any Serious Medical Issues?", options)
+                            Height = st.text_input("Height(in cms)")
+                            # options = ["HyperTension", "Hypotension", "High Sugar", "Cancer"]
+                            medicalIssues = st.text_input("Any Serious Medical Issues?")
                     st.markdown("")
+                    # global export
+                    export_username=username
 
                         # Add validation for form fields
                     if st.button("Create Account"):
