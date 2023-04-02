@@ -16,8 +16,9 @@ def app():
          """,
          unsafe_allow_html=True
      )
-    
-        
         st.write('Whether you need professional medical help or just need to buy medicines we have got you covered.')
-        st.markdown(' ## About Us  ##')
-        st.write('We started out as a small group of friends committed to providing high quality medical advice to everyone at affordable rates.')
+        st.subheader("Confused about how to use the website ?")
+        st.write("The site is basically divided into 2 sections a doctor's section where doctors can sign up and meet patients and a patient section where people can order medicines and consult doctors.")
+       
+        st.subheader('  About Us  ')
+        st.write('This effort started as an effort to connect doctors and people so that everyone can have access to high quality medical advice and medicines at affordable rates.')

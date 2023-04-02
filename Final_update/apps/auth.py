@@ -21,16 +21,17 @@ def Verification():
          unsafe_allow_html=True
      )           
                 
-                try:
-                    export_username
-                except NameError:
-                    export_username = doctors.export_username_1
+                # try:
+                #     export_username
+                # except NameError:
+                #     export_username = doctors.export_username_1
+                
                       
                
                 if "load_state" not in st.session_state:
                                                     
                                 st.session_state.load_state = False                                
-                if len(export_username)!=0:
+                if len(doctors.export_username_1)!=0:
                       
                       return  st.warning('You are already registered. ')
                     
@@ -119,7 +120,9 @@ def Verification():
                             st.error("Passwords do not match.")
                         else:
                             # Process the form data and create a new user account
-                            export_username=username
+                            doctors.export_username_1=username
+                            export_username=doctors.export_username_1 
+                            # export_username=username
                             signup(username,name,password, email, age, gender, Weight, Height, medicalIssues)
                         
                 if st.button("Already have an account ? Login",key='7') or st.session_state.load_state:                     
@@ -163,7 +166,9 @@ def Verification():
                                 elif len(password1.strip()) <= 7:
                                     st.error("Minimum pass lenght is 8.")
                                 else:
-                                    export_username=username
+                                    doctors.export_username_1=username
+                                    export_username=doctors.export_username_1 
+                                    # export_username=username
                                     # Process the form data and create a new user account
                                     login(name,password1)
                                     app.func
@@ -192,13 +197,13 @@ def LoginUI():
                 # except:
                 #       ImportError,NameError,SyntaxError      
                 #       export_username = doctors.export_username_1   
-                try:
-                    export_username
-                except NameError:
-                    export_username = doctors.export_username_1 
+                # try:
+                #     export_username
+                # except NameError:
+                #     export_username = doctors.export_username_1 
                 if "load_state" not in st.session_state:
                         st.session_state.load_state = False
-                if len(export_username)!=0:
+                if len(doctors.export_username_1)!=0:
                       
                       return  st.warning('You are already registered. ')
                 else :
@@ -210,6 +215,8 @@ def LoginUI():
                     # Check if the user exists and the password matches
                     user = db.users.find_one({"username": username, "password": password})
                     if user:
+                        doctors.export_username_1=username
+                        export_username=doctors.export_username_1 
 
                         # global export
                         export_username=username
@@ -333,7 +340,9 @@ def LoginUI():
                             elif password != confirm_password:
                                 st.error("Passwords do not match.")
                             else:
-                                export_username=username
+                                doctors.export_username_1=username
+                                export_username=doctors.export_username_1 
+                                # export_username=username
                                 # Process the form data and create a new user account
                                 Verification.signup(username,name,password, email, age, gender, Weight, Height, medicalIssues)
                         

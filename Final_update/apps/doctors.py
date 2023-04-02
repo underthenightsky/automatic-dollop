@@ -2,19 +2,16 @@ import streamlit as st
 import pandas as pd
 import os
 import pymongo
-from apps.auth import export_username
+
 import json
 import time
 import requests
 import jwt
 export_username_1=''
-# from selenium import webdriver
-# from selenium.webdriver.common.keys import Keys
-# from selenium.webdriver.chrome.options import Options
-# import datetime
+from apps import auth
+
 import time
-# import signal
-# def consult():
+
 def app():
     st.markdown(
          f"""
@@ -31,20 +28,20 @@ def app():
          """,
          unsafe_allow_html=True
      )
-    # export_username_1=export_username
+    # export_username_1=auth.export_username
     if "load_state" not in st.session_state:
           st.session_state.load_state = False 
-                                                    
+    auth.export_username=export_username_1                                                   
                                 
     # Set page title and favicon
     # st.set_page_config(page_title='Find a Doctor',page_icon=':hospital:')
-    new_path='C:/Users/Friend/Downloads/doctor_app-master'
-    if os.path.exists(new_path):
-         os.chdir(new_path)
-         doctors_df = pd.read_csv(f'{os.getcwd()}/doctors_names.csv')
-    else :    
-    # # Load data
-        doctors_df = pd.read_csv(f'{os.getcwd()}/doctors_names.csv')
+    new_path="C:/Users/1/Downloads/doctor_app-master/doctor_app-master/Final_update/apps/doctors_names.csv"
+    # if os.path.exists(new_path):
+    #      os.chdir(new_path)
+    doctors_df = pd.read_csv(new_path)
+    # else :    
+    # # # Load data
+    #     doctors_df = pd.read_csv(f'{os.getcwd()}/doctors_names.csv')
     
     # Define page layout
     st.title('Doctor Finder')
@@ -71,26 +68,20 @@ def app():
             st.write('---')
     if len(filtered_df)>1:
           st.error("Please chose only one doctor at a time.")
+    auth.export_username=export_username_1  
     # while True :
             
     if len(filtered_df) == 1:
             
-            if len(export_username)==0:                 
+            if len(auth.export_username)==0:                 
                    st.error("Please Log in or Sign up to consult a doctor.")
             else:     
                 if st.button("Click here to consult") or st.session_state.load_state:
                     st.session_state.load_state=True
                     cluster=pymongo.MongoClient('mongodb+srv://Garv:bcss1972@cluster0.wjgguh1.mongodb.net/?retryWrites=true&w=majority')
                     db=cluster['mydatabase']
-                    results=db.users.find_one({"username":export_username})
-                    # st.write(results)
-                    # def consult_1(username,password,email,fullname,age,gender,height,weight,medical_issues,Issue_concise_Description,Issue_Time,Issue_Description):
-
-                        
-                    #     user = {"username": username, "password": password, "email": email, "name": fullname,"age": age,"gender": gender, "Weight": weight, "Height": height, "MedicalHistory": medical_issues,'Issue_concise_Description':Issue_concise_Description,'Issue_Time':Issue_Time,'Issue_Description':Issue_Description}
-                    #     db.user.insert_one(user)
-                    #     db.user.delete_one({'username':username})
-                    #     st.write('Form submitted successfully.')
+                    results=db.users.find_one({"username":auth.export_username})
+                    
                     with st.form('Doc_Consult_form'):
 
                             st.header("Doctors Consultation Form")
@@ -114,7 +105,8 @@ def app():
                             if submission==True:
                                 if (len(fullname)==0 or len(age)==0 or len(weight)==0 or len(gender)==0 or len(height)==0 or len(medical_issues)==0 or len(Issue_concise_Description)==0 or len(Issue_Time)==0 or len(Issue_Description)==0):
                                       st.error('Please fill up all the required sections')
-                                else :      
+                                else :
+                                    # doctors.export_username_1=username      
                                     user = {"username": results['username'], "password": results['password'], "email": results['email'], "name": results['name'],"age": results['age'],"gender": results['gender'], "Weight": results['Weight'], "Height": results['Height'], "MedicalHistory": results['MedicalHistory'],'Issue_concise_Description':Issue_concise_Description,'Issue_Time':Issue_Time,'Issue_Description':Issue_Description}
                                     db.users.delete_many({"username":f"{results['username']}"})
                                     db.users.insert_one(user)

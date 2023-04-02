@@ -1,20 +1,10 @@
 import streamlit as st
 import pandas as pd
-import os
-import pymongo
-from apps.auth import export_username
-import json
-import time
-import requests
-import jwt
-export_username_1=''
-# from selenium import webdriver
-# from selenium.webdriver.common.keys import Keys
-# from selenium.webdriver.chrome.options import Options
-# import datetime
-import time
-# import signal
-# def consult():
+
+from apps import auth
+
+
+
 def app():
     st.markdown(
          f"""
@@ -34,7 +24,7 @@ def app():
     # new_path_meds='C:/Users/Friend/Downloads/doctor_app-master/apps/
     # if os.path.exists("C:/Users/Friend/Downloads/doctor_app-master/apps/medicines_names.xlsx"):
     #      os.chdir("C:/Users/Friend/Downloads/doctor_app-master/apps")
-    meds_df = pd.read_csv("C:/Users/Friend/Downloads/doctor_app-master/apps/medicines_names.csv")
+    meds_df = pd.read_csv("C:/Users/1/Downloads/doctor_app-master/doctor_app-master/Final_update/apps/medicines_names.csv")
     # else :    
     # # # Load data
     #     meds_df = pd.read_csv(f'{os.getcwd()}/medicines_names.xlxs')
@@ -66,11 +56,11 @@ def app():
     #       st.error("Please chose only one doctor at a time.")
     # # while True :
             
-    if len(filtered_meds) == 1:
+    # if len(filtered_meds) == 1:
             
-            if len(export_username)==0:                 
+    if len(auth.export_username)==0:                 
                    st.error("Please Log in or Sign up to buy medicines.")
-            else:     
+    else:     
                 if st.button("Click here to Buy") or st.session_state.load_state:
                     st.session_state.load_state=True
                     # cluster=pymongo.MongoClient('mongodb+srv://Garv:bcss1972@cluster0.wjgguh1.mongodb.net/?retryWrites=true&w=majority')
