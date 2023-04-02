@@ -65,9 +65,9 @@ def app():
                                         st.error('Please fill up all the required sections')
                                     else :
                                         # doctors.export_username_1=username      
-                                        user = {"username": username, "password":password, "email": email, "name": fullname,"age": age,"gender":gender, " medical_speciality":  medical_speciality, "Hospital_name": Hospital_name, " Phone_number":  Phone_number,'Address':Address}
+                                        user = {"username": username, "password":password, "email": email, "name": fullname,"age": age,"gender":gender, " medical_speciality":  medical_speciality, "Hospital_name": Hospital_name, " Phone_number":  Phone_number,'Address':Address, 'Zoom Meeting': "NULL"}
                                         # db.users.delete_many({"username":f"{results['username']}"})
-                                        db.users.insert_one(user)
+                                        db.Doctors.insert_one(user)
                                         st.write('Form submitted successfully.')
                                         st.write('Please wait 4 to 5 working days while our team verifies yours credentials.')
                                         # consult_1(user.values())
